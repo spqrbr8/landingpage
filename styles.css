@@ -1,0 +1,169 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #f5f5f5;
+    font-size: 18px;
+    font-family: "Lucida Sans", sans-serif;
+}
+
+header {
+    height: 70px;
+    background-color: rgb(6, 6, 82);
+    position: fixed;
+    width: 100%;
+    padding-top: 30px;
+    padding-left: 20px;
+    font-size: 20px;
+    transition: background-color 2s ease;
+}
+
+    header:hover {
+        background-color: #d53003;
+    }
+
+    header a {
+        color: white;
+        text-decoration: none;
+    }
+
+.page-container {
+    padding-top: 70px;
+}
+
+main {
+    margin: 10px 10% 60px 220px;
+    padding: 0px 25px;
+}
+
+aside {
+    width: 190px;
+    height: 100vh;
+    position: fixed;
+    background: #30415d;
+    padding-top: 10px;
+    font-size: 20px;
+    transition: background-color 0.5s linear;
+
+}
+
+aside:hover {
+    background: #d44001;
+}
+
+    aside a {
+        display: block;
+        color: white;
+        text-transform: uppercase;
+        text-align: center;
+        text-decoration: none;
+        margin-top: 35px;
+
+    }
+
+p {
+    line-height: 170%;
+    border-left: 6px solid #ff533d;
+    padding-left: 10px;
+}
+
+.title {
+    border-bottom: 4px solid #ff533d;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.intro-video {
+    display: block;
+    height: 50vh;
+    margin: 40px auto;
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    transition: all 0.3s;
+}
+
+    .intro-video:hover {
+        transform: scale(1.05);
+        transition: all 0.3s;
+    }
+
+.gallery {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+    .gallery img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 5px;
+        transition: all 0.3s;
+    }
+
+    .gallery img:hover {
+        transform: scale(1.05);
+        transition: all 0.3s;
+    }
+
+
+    /*========================================================================================================================================*/
+
+    
+    @media (max-width: 768px) {
+        header {
+            font-size: 18px;
+            padding: 10px;
+        }
+    
+        .page-container {
+            flex-direction: column;
+        }
+    
+        aside {
+            position: static;
+            width: 100%;
+            height: auto;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+    
+        aside a {
+            margin: 10px;
+            font-size: 14px;
+        }
+    
+        main {
+            margin: 10px;
+        }
+    
+        .intro-video {
+            height: 40vh;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        header {
+            font-size: 16px;
+            padding: 5px;
+        }
+    
+        aside a {
+            font-size: 12px;
+            margin: 5px;
+        }
+    
+        .gallery img {
+            width: 120px;
+            height: 120px;
+        }
+    
+        .intro-video {
+            height: 30vh;
+        }
+    }

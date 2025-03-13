@@ -1,19 +1,42 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
 
-*{
+:root {
+    --body-color: #f5f5f5;
+    --header-color: #0f1626;
+    --logo-color: #f5f5f5;
+    --aside-color: #18243f;
+    --aside-hover-color: #ff533d;
+    --text-color: #000000;
+    --col-20: #ffffff;
+}
+
+/* Tema întunecată */
+:root.dark-theme {
+    --body-color: #181818;
+    --header-color: #222;
+    --logo-color: #ffffff;
+    --aside-color: #252525;
+    --aside-hover-color: #ff533d;
+    --text-color: #e0e0e0;
+    --col-20: #00000000;
+}
+
+* {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    background-color: #f5f5f5;
+    background-color: var(--body-color);
+    color: var(--text-color);
     font-size: 18px;
     font-family: 'Noto Sans', sans-serif;
 }
 
 header {
     height: 70px;
-    background-color: #0f1626;
+    background-color: var(--header-color);
+    color: var(--text-color);
     position: fixed;
     width: 100%;
     padding-top: 20px;
@@ -21,9 +44,63 @@ header {
     font-size: 24px;
 }
 
-header a {
-    color: white;
+.theme-switch {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10000;
+    width: 60px;
+    height: 34px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #000000;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.logo {
+    color: var(--logo-color);
     text-decoration: none;
+    font-size: 24px;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.2);
 }
 
 .page-container {
@@ -40,20 +117,19 @@ aside {
     width: 190px;
     height: 100vh;
     position: fixed;
-    background: #18243f;
+    background: var(--aside-color);
     padding-top: 10px;
     font-size: 20px;
     transition: background-color 0.5s ease;
 }
 
 aside:hover {
-    background-color: #ff533d;
+    background-color: var(--aside-hover-color);
 }
-
 
 aside a {
     display: block;
-    color: white;
+    color: var(--text-color);
     text-transform: uppercase;
     text-decoration: none;
     text-align: center;
@@ -134,6 +210,10 @@ p {
     overflow-y: scroll;
 }
 
+.dark-theme .event {
+    background-color: #252525;
+}
+
 .contact-list {
     line-height: 200%;
     list-style: linear-gradient(#ff533d, #ff533d);
@@ -159,6 +239,10 @@ p {
     padding: 5px 15px 30px 15px;
 }
 
+.dark-theme .contact-form {
+    background-color: #252525;
+}
+
 .contact-form input, .contact-form textarea {
     display: block;
     width: 90%;
@@ -168,7 +252,6 @@ p {
     padding: 3px;
     font-size: 16px;
 }
-
 
 @media (max-width: 768px) {
     body {
@@ -189,12 +272,12 @@ p {
         height: auto;
         width: 100%;
         padding: 10px 0 25px;
-        background: #18243f;
+        background: var(--aside-color);
         transition: all ease 0.5s;
     }
 
     aside:hover {
-        background-color: #ff533d;
+        background-color: var(--aside-hover-color);
     }
 
     .gallery img {
@@ -203,8 +286,7 @@ p {
     }
 }
 
-/*========================================================================*/
-
+/* Animație fotbal */
 .play-football {
     position: relative;
     height: 200px;
@@ -226,12 +308,9 @@ p {
     animation: passBall 2s infinite linear, scaleBall 2s infinite linear;
 }
 
-/* Animația mingii pentru mișcare laterală */
 @keyframes passBall {
     0%   {left:-600px; top:0px;}
     25%  {left:600px; top:0px;}
-    50%   {left:-600px; top:0px;}
+    50%  {left:-600px; top:0px;}
     100%  {left:600px; top:0px;}
 }
-
-

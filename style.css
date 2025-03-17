@@ -7,7 +7,6 @@
     --aside-color: #18243f;
     --aside-hover-color: #ff533d;
     --text-color: #000000;
-    --col-20: #ffffff;
 }
 
 /* Tema întunecată */
@@ -18,7 +17,6 @@
     --aside-color: #252525;
     --aside-hover-color: #ff533d;
     --text-color: #e0e0e0;
-    --col-20: #00000000;
 }
 
 * {
@@ -42,6 +40,10 @@ header {
     padding-top: 20px;
     padding-left: 30px;
     font-size: 24px;
+}
+
+aside a {
+    color: white !important;
 }
 
 .theme-switch {

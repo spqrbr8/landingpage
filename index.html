@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <link rel="stylesheet" type="text/css" href="styles/style.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sport.md</title>
 </head>
@@ -11,10 +11,13 @@
 <body>
 
     <header>
-        <a href="index.html">
+        <div class = "logo">
             Sport.md
-        </a>
-
+        </div>
+        <label class="theme-switch">
+            <input type="checkbox" id="themeToggle">
+            <span class="slider"></span>
+        </label>
     </header>
 
     <div class="page-container">
@@ -34,7 +37,7 @@
                 dignissimos placeat velit.
             </p>
 
-            <video class="intro-video" muted autoplay loop src="/resources/intro.mp4"></video>
+            <video class="intro-video" muted autoplay loop src="intro.mp4"></video>
 
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste ratione debitis neque reprehenderit est
@@ -69,7 +72,7 @@
         </main>
 
     </div>
-
+<script src="script.js"></script>
 </body>
 
 </html>

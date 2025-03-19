@@ -45,6 +45,11 @@ header {
 aside a {
     color: white !important;
 }
+aside a:hover {
+    font-size: 130%;
+
+    transition: font-size 0.1s;
+}
 
 .theme-switch {
     position: absolute;

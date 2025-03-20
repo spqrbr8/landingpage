@@ -21,7 +21,6 @@
     background: white;
     border-bottom: 2px solid #F5F5F5;
     transition: .3s ease-in;
-    border-style: 100px solid #fc5a5a;
 }
 
 .card:hover {
@@ -62,6 +61,10 @@
     font-size: 12px;
     line-height: 28px;
     transition: .3s ease-in;
+}
+
+.card_info h3, .button, .price{
+    margin-left: 10px;
 }
 
 .button:hover {
